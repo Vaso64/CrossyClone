@@ -1,26 +1,64 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using System;
 
 public class Player : MonoBehaviour
 {
-    public int[,] matrix = new int[999, 11];
-    private int PreJumpID = Animator.StringToHash("SpaceHold");
-    private int JumpID = Animator.StringToHash("SpaceRelease");
+    public GameObject[] world = new GameObject[500];
+    [SerializeField] public GameObject[] lines;
+    public int[,] obstacleMatrix = new int[999, 11];
     private Animator animator;
-    enum State { idle, move, dead, floating};
-    [SerializeField] State state = State.idle;
+    public int score = 0;
+    public int coins;
+    public enum State { idle, move, dead, floating, restarting, readytostart, paused, unpausing};
+    public State state = State.readytostart;
+    private State previousState;
+    public GameObject pauseOverlay;
+    public Text pauseText;
+    private int spawnPos = 0;
+    private Animator canvas;
+    private Touch touch;
+    private Vector2 touchStart;
+    private Vector2 touchDirection;
+    private Text scoreText;
+    public Text coinText;
     private float startTime;
-    private Vector3 nextPos;
+    public Vector3 nextPos;
     private Vector3 startPos;
-    private Quaternion nextRot;
+    public Quaternion nextRot;
     private Quaternion startRot;
+    private Camera camera;
     private float t = 0;
-    [SerializeField] float moveTime = 0.2f;
-    private Vector3 mover;
-
+    [SerializeField] public float moveTime = 0.2f;
+    public Vector3 mover;
+    
     private void Start()
     {
+        //Store starting lines into world array
+        for (; spawnPos != 7; spawnPos++)
+        {   
+            world[spawnPos] = GameObject.Find("GrassLine" + spawnPos);
+        }
+        //Generate more lines into world array
+        for (; spawnPos != 30; spawnPos++)
+        {
+            world[spawnPos] = Instantiate(lines[UnityEngine.Random.Range(0, 5)], new Vector3(0, 0, spawnPos), Quaternion.identity) as GameObject;
+        }
+
+        //Get various components
+        canvas = GameObject.Find("Canvas").GetComponent<Animator>(); //get Canvas Animator (UI Render)
+        camera = GameObject.Find("Main Camera").GetComponent<Camera>(); //get Camera
         animator = transform.Find("Chicken").GetComponent<Animator>(); //get Animator
+        scoreText = GameObject.Find("Canvas").transform.Find("Score").GetComponent<Text>();
+        coinText = GameObject.Find("Canvas").transform.Find("CoinText").GetComponent<Text>();
+
+        //Load Coin value
+        coins = PlayerPrefs.GetInt("Money");
+        coinText.text = coins.ToString();
+
+        //Rotates device screen/resolution
+        InvokeRepeating("ScreenRotator", 0, 0.5f);
     }
 
     // Update is called once per frame
@@ -43,7 +81,7 @@ public class Player : MonoBehaviour
     {
         t += Time.deltaTime / moveTime; //time of movement
         transform.localPosition = Vector3.Lerp(startPos, nextPos, t); //move
-        transform.localRotation = Quaternion.Lerp(startRot, nextRot, t*2);
+        transform.localRotation = Quaternion.Lerp(startRot, nextRot, t * 2);
         //Return to idle on end
         if (t >= 1)
         {
@@ -53,83 +91,252 @@ public class Player : MonoBehaviour
     }
     private void InputManager() //Handles Input
     {
-        if (Input.GetKey(KeyCode.R)) //RESTART
+
+        //TOCUHSCREEN HANDLER
+        if(Input.touchCount > 0 && state == State.idle || state == State.floating)
         {
-            SceneManager.LoadScene(0);
+            touch = Input.GetTouch(0);
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    touchStart = touch.position;
+                    break;
+                case TouchPhase.Ended:
+                    touchDirection = touchStart - touch.position;
+                    if(Mathf.Abs(touchDirection.x) > Mathf.Abs(touchDirection.y) && Mathf.Abs(touchDirection.x) > 100)
+                    {
+                        if(touchDirection.x > 0) { Move(-90, Vector3.left); } //LEFT
+                        else { Move(90, Vector3.right); } //RIGHT
+                    }
+                    else
+                    {
+                        if(touchDirection.y > 0 && Mathf.Abs(touchDirection.y) > 100) { Move(180, Vector3.back); } //DOWN
+                        else { Move(0, Vector3.forward); } //UP
+                    }
+                    break;
+            }
+
         }
+        if(Input.touchCount == 1 && state == State.readytostart)
+        {
+            state = State.idle;
+            canvas.SetTrigger("StartGame");
+            camera.speed = 0.6f;
+        }
+
+        if (state != State.paused && Input.GetKeyDown(KeyCode.Escape)) //PAUSE
+        {
+            Pause();
+        }
+        else if (state == State.paused && (Input.anyKeyDown || Input.touchCount > 0)) //UNPAUSE
+        {
+            Pause();
+        }
+
+        
+        //KEYBOARD HANDLER
+        if (/*Input.GetKeyDown(KeyCode.R) && state != State.restarting && state != State.readytostart || */state == State.dead && Input.touchCount > 0) //RESTART
+        {
+            StartCoroutine(Restart());
+        }
+        if (state != State.paused && Input.GetKeyDown(KeyCode.Escape)) //PAUSE
+        {
+            Pause();
+        }
+        else if (state == State.paused && (Input.anyKeyDown || Input.touchCount > 0)) //UNPAUSE
+        {
+            Pause();
+        }
+        
         if (state == State.idle || state == State.floating)
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && matrix[Mathf.RoundToInt(transform.position.z) + 5, Mathf.RoundToInt(transform.position.x) + 5] != 1) //Move forward
+            if (Input.GetKeyDown(KeyCode.W)) //Move forward
             {
                 Move(0, Vector3.forward);
             }
-            if (Input.GetKeyDown(KeyCode.D) && matrix[Mathf.RoundToInt(transform.position.z) + 4, Mathf.RoundToInt(transform.position.x) + 6] != 1) //Turn right
+            if (Input.GetKeyDown(KeyCode.D)) //Turn right
             {
                 Move(90, Vector3.right);
             }
-            if (Input.GetKeyDown(KeyCode.A) && matrix[Mathf.RoundToInt(transform.position.z) + 4, Mathf.RoundToInt(transform.position.x) + 4] != 1) //Turn left
+            if (Input.GetKeyDown(KeyCode.A)) //Turn left
             {
                 Move(-90, Vector3.left);
             }
-            if (Input.GetKeyDown(KeyCode.S) && matrix[Mathf.RoundToInt(transform.position.z) + 3, Mathf.RoundToInt(transform.position.x) + 5] != 1) //Turn back
+            if (Input.GetKeyDown(KeyCode.S)) //Turn back
             {
                 Move(180, Vector3.back);
             }
         }
+        
+    }
+
+    IEnumerator Restart()
+    {
+        state = State.restarting;
+        canvas.SetTrigger("Restart");
+        yield return new WaitForSeconds(1.2f); //Wait for faded screen
+        //Return player to start
+        animator.Rebind();
+        mover = Vector3.zero;
+        transform.position = new Vector3(0, 0.92f, 4);
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+
+        //Clear world
+        for(int x = 7; x != world.Length; x++)
+        {
+            Destroy(world[x]);
+        }
+        Array.Clear(obstacleMatrix, 0, obstacleMatrix.Length);
+        for (int x = 0; x != 7; x++)
+        {
+            foreach (Transform child in world[x].transform)
+            {
+                if(child.tag == "Obstacle" || child.tag == "Coin")
+                Destroy(child.gameObject);
+            }
+            world[x].GetComponent<Grassline>().Start();
+        }
+
+        //Adjust other variables
+        spawnPos = 0;
+        camera.speed = 0;
+        camera.transform.position = new Vector3(2.8f, 10, -3);
+        state = State.readytostart;
+        animator.SetTrigger("Restart");
+        Start();
     }
 
     private void Move(float rot, Vector3 direction) //Move player in world
     {
-        state = State.move;
-        startPos = transform.position;
-        nextPos = startPos + direction;
-        if(transform.position.z == nextPos.z)
+        if (obstacleMatrix[Mathf.RoundToInt(transform.position.z + 4 + direction.z), Mathf.RoundToInt(transform.position.x + 5 + direction.x)] != 1) //Check for obstacle in world
         {
-            nextPos += mover * moveTime;
+            //Sets from-to transform
+            startPos = transform.position;
+            nextPos = startPos + direction;
+            startRot = transform.rotation;
+            nextRot = Quaternion.Euler(new Vector3(0, rot, 0));
+            int nextPosZint = Mathf.RoundToInt(nextPos.z);
+            int startPosZint = Mathf.RoundToInt(startPos.z);
+
+            //Spawn next line (RENDER)
+            if (nextPos.z > spawnPos - 20)
+            {
+                WolrdSpawner();
+            }
+
+            //Update score
+            if (nextPos.z - 4 > score)
+            {
+                score++;
+                scoreText.text = score.ToString();
+            }
+
+            //Garbage Collector
+            if(nextPosZint - 15 > 6 && world[nextPosZint - 15] != null)
+            {
+                Destroy(world[nextPosZint - 15]);
+                world[nextPosZint - 15] = null;
+            }
+
+            //Stops old kill timer
+            switch (world[Mathf.RoundToInt(startPos.z)].tag)
+            {
+                case "Road":
+                    world[startPosZint].GetComponent<Roadline>().StopAllCoroutines();
+                    break;
+                case "Water":
+                    world[startPosZint].GetComponent<Waterline>().StopAllCoroutines();
+                    break;
+                default:
+                    break;
+            }
+
+            //Starts new kill timer
+            switch (world[nextPosZint].tag)
+            {
+                case "Grass":
+                    world[nextPosZint].GetComponent<Grassline>().WorldChecker(nextPos.x);
+                    break;
+                case "Road":
+                    world[nextPosZint].GetComponent<Roadline>().WorldChecker(nextPos.x);
+                    break;
+                case "Water":
+                    world[nextPosZint].GetComponent<Waterline>().WorldChecker(nextPos.x);
+                    break;
+                case "Rail":
+                    world[nextPosZint].GetComponent<Railline>().WorldChecker(nextPos.x);
+                    break;
+                default:
+                    break;
+            }
+
+            //Starts moving
+            state = State.move;
         }
-        startRot = transform.rotation;
-        nextRot = Quaternion.Euler(new Vector3(0, rot, 0));
-        if(transform.position.z != nextPos.z)
-        {
-            nextPos = new Vector3(Mathf.Round(startPos.x), startPos.y, startPos.z) + direction;
-            mover = Vector3.zero;
-        }
-        animator.SetTrigger("Jump");
     }
 
-    private void OnTriggerEnter(Collider other) //Handles collisions
+    void WolrdSpawner() //TODO More complex spawning system
     {
-        if(other.gameObject.tag == "Enemy") //on Death
+        world[spawnPos] = Instantiate(lines[UnityEngine.Random.Range(0, 4)], new Vector3(0, 0, spawnPos), Quaternion.identity) as GameObject;
+        spawnPos++;
+    }
+
+    public void Pause()
+    {
+        if(state != State.unpausing)
         {
-            if(state == State.move && (nextRot.y == 0 || nextRot.y == 180) && nextPos.z == other.gameObject.transform.position.z) //Play bump up "animation"
-            {
-                animator.SetTrigger("Bumpup");
-                transform.rotation = nextRot * Quaternion.Euler(0,0,Random.Range(-30,30)); //Random rotation
-                transform.position = startPos + new Vector3(0, 0, 0.1f);
-                mover = Vector3.left * other.gameObject.GetComponent<Mover>().speed;
-            }
-            else //Play run over animation
-            {
-                animator.SetTrigger("Runover");
-                transform.position = new Vector3(transform.position.x, transform.position.y, other.gameObject.transform.position.z);
-            }
-            state = State.dead;
+            StartCoroutine(PauseTime());
+        }
+    }
+
+    private IEnumerator PauseTime()
+    {
+        //Pause
+        if (state != State.paused)
+        {
+            pauseOverlay.SetActive(true);
+            Time.timeScale = 0;
+            previousState = state;
+            state = State.paused;
+            yield break;
         }
 
-        if(other.gameObject.tag == "Coin") //Pickup coin
+        //Unpause
+        if(state == State.paused)
         {
-            Destroy(other.gameObject);
+            state = State.unpausing;
+            for(int x = 3; x > 0; x--)
+            {
+                pauseText.text = x.ToString();
+                yield return new WaitForSecondsRealtime(1);
+            }
+            pauseOverlay.SetActive(false);
+            pauseText.text = "PAUSED";
+            state = previousState;
+            Time.timeScale = 1;
         }
-        if(other.gameObject.tag == "Floater") //Start floating on water
+    }
+
+    private void ScreenRotator()
+    {
+        switch (Input.deviceOrientation)
         {
-            //other.gameObject.GetComponentInChildren<Animator>().SetTrigger("Float");
-            state = State.floating;
-            animator.SetTrigger("Float");
-            mover = Vector3.left * other.gameObject.GetComponent<Mover>().speed;
-        }
-        if(other.gameObject.tag == "Water" && state != State.floating) //Fall to water
-        {
-            animator.SetTrigger("Water");
+            case DeviceOrientation.Portrait:
+                Screen.SetResolution(1080, 1920, true);
+                GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 6f;
+                break;
+            case DeviceOrientation.PortraitUpsideDown:
+                Screen.SetResolution(1080, 1920, true);
+                GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 6f;
+                break;
+            case DeviceOrientation.LandscapeLeft:
+                Screen.SetResolution(1920, 1080, true);
+                GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 4f;
+                break;
+            case DeviceOrientation.LandscapeRight:
+                Screen.SetResolution(1920, 1080, true);
+                GameObject.Find("Main Camera").GetComponent<UnityEngine.Camera>().orthographicSize = 4f;
+                break;
         }
     }
 }

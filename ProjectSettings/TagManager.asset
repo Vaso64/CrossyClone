@@ -4,10 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Coin
   - Floater
   - Water
+  - Rail
+  - Road
+  - Grass
+  - Enemy
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -44,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Front
+    uniqueID: 3346478233
     locked: 0

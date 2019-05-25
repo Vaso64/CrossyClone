@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1914800446715076328}
   - component: {fileID: 4761001346235114314}
-  - component: {fileID: 2092770230379356599}
   m_Layer: 0
   m_Name: Car4
   m_TagString: Enemy
@@ -46,19 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
---- !u!65 &2092770230379356599
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765654480188308249}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.6, y: 1, z: 1}
-  m_Center: {x: -1.4, y: 1, z: 0}
+  size: 2.5
 --- !u!1 &7260804522449324812
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +72,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7260804522449324812}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: -0.5}
+  m_LocalPosition: {x: 2.7, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1914800446715076328}
