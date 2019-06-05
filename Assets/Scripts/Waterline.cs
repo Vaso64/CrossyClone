@@ -43,7 +43,7 @@ public class Waterline : MonoBehaviour
         {
             waterlilyMode = true;
             bool noWaterlily = true;
-            Vector3 position = new Vector3(4f, 0.45f, transform.position.z); //Set spawns position (x is non-static)
+            Vector3 position = new Vector3(4f, 0.35f, transform.position.z); //Set spawns position (x is non-static)
             while (position.x <= 4 && position.x >= -4)   //Spawns while in inner range
             {
                 //Spawns static object with inner probability
@@ -65,11 +65,11 @@ public class Waterline : MonoBehaviour
             if (noWaterlily) //Spawns one waterlily if none spawneds
             {
                 int randomX = Random.Range(-4, 5);
-                spawnedObjects[Mathf.RoundToInt(randomX) + 4] = Instantiate(Waterlily, new Vector3(randomX, 0.45f, transform.position.z), Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0));
+                spawnedObjects[Mathf.RoundToInt(randomX) + 4] = Instantiate(Waterlily, new Vector3(randomX, 0.35f, transform.position.z), Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0));
                 spawnedObjects[Mathf.RoundToInt(randomX) + 4].transform.SetParent(transform);
                 if (Random.Range(0, 100) < coinProb)
                 {
-                    Coins[Mathf.RoundToInt(randomX) + 4] = Instantiate(Coin, new Vector3(randomX, 0.45f, transform.position.z), Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0)) as GameObject;
+                    Coins[Mathf.RoundToInt(randomX) + 4] = Instantiate(Coin, new Vector3(randomX, 0.35f, transform.position.z), Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0)) as GameObject;
                     Coins[Mathf.RoundToInt(randomX) + 4].transform.SetParent(transform);
                 }
             }

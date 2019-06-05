@@ -31,11 +31,11 @@ public class Railline : MonoBehaviour
         player.obstacleMatrix[posZ, 0] = 1;
 
         //Spawns rail light
-        GameObject SpawnedRailLight = Instantiate(RailLight, new Vector3(Random.Range(-2, 3) + 0.5f, -0.465f, transform.position.z + 0.499f), Quaternion.identity);
+        GameObject SpawnedRailLight = Instantiate(RailLight, new Vector3(Random.Range(-2, 3) + 0.5f, -0.55f, transform.position.z + 0.499f), Quaternion.identity);
         SpawnedRailLight.transform.parent = gameObject.transform;
 
         //Spawn coin
-        Vector3 position = new Vector3(4f, 0.35f, transform.position.z); //Set spawns position (x is non-static)
+        Vector3 position = new Vector3(4f, 0.3f, transform.position.z); //Set spawns position (x is non-static)
         while (position.x <= 4 && position.x >= -4)   //Spawns while in inner range
         {
             //spawn probability
@@ -126,7 +126,7 @@ public class Railline : MonoBehaviour
     public void WorldChecker(float playerPos)
     {
         player.mover = Vector3.zero;
-        player.nextPos.y = 0.82f;
+        player.nextPos.y = 0.72f;
         player.nextPos.x = Mathf.RoundToInt(playerPos);
 
         //Calculate train position
@@ -141,7 +141,7 @@ public class Railline : MonoBehaviour
             lastTrain = trainEnds[1].transform.position.x + 50 * direction * (player.moveTime / -2);
             if (direction == 1 && playerPos > firstTrain && playerPos < lastTrain || direction == -1 && playerPos < firstTrain && playerPos > lastTrain)
             {
-                playerAnimator.SetTrigger("Bumpup");
+                playerAnimator.SetTrigger("Jump");
                 StartCoroutine(WorldCheckerTime(0, playerPos, player.moveTime / 2));
                 return;
             }
@@ -174,6 +174,7 @@ public class Railline : MonoBehaviour
             case 0: //Bumpup
                 player.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(-30, 30)));
                 player.mover = new Vector3(50 * direction * -1, 0, 0);
+                playerAnimator.SetTrigger("Bumpup");
                 player.state = Player.State.dead;
                 GameObject.Find("Main Camera").GetComponent<Camera>().speed = 0;
                 break;

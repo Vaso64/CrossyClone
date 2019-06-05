@@ -59,13 +59,16 @@ public class Player : MonoBehaviour
 
         //Rotates device screen/resolution
         InvokeRepeating("ScreenRotator", 0, 0.5f);
+
+        //Lock display refresh rate
+        //Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
     private void Update()
     {
         transform.position += mover * Time.deltaTime; //Move object to direction
-        if(state != State.dead && (transform.position.x < -4.5f || transform.position.x > 4.5f)) //dead on outside of world space
+        if(state != State.dead && (transform.position.x < -5f || transform.position.x > 5f)) //dead on outside of world space
         {
             state = State.dead;
         }
@@ -114,10 +117,9 @@ public class Player : MonoBehaviour
                         else { Move(0, Vector3.forward); } //UP
                     }
                     break;
-            }
-
+            } 
         }
-        if(Input.touchCount == 1 && state == State.readytostart)
+        if((Input.anyKeyDown || Input.touchCount == 1 ) && state == State.readytostart)
         {
             state = State.idle;
             canvas.SetTrigger("StartGame");
@@ -135,21 +137,15 @@ public class Player : MonoBehaviour
 
         
         //KEYBOARD HANDLER
-        if (/*Input.GetKeyDown(KeyCode.R) && state != State.restarting && state != State.readytostart || */state == State.dead && Input.touchCount > 0) //RESTART
+        if ((Input.GetKeyDown(KeyCode.R) && state != State.restarting && state != State.readytostart) || state == State.dead && (Input.touchCount > 0 || Input.anyKeyDown)) //RESTART
         {
             StartCoroutine(Restart());
         }
-        if (state != State.paused && Input.GetKeyDown(KeyCode.Escape)) //PAUSE
-        {
-            Pause();
-        }
-        else if (state == State.paused && (Input.anyKeyDown || Input.touchCount > 0)) //UNPAUSE
-        {
-            Pause();
-        }
-        
+
+        //Debug.Log(state);
         if (state == State.idle || state == State.floating)
         {
+            
             if (Input.GetKeyDown(KeyCode.W)) //Move forward
             {
                 Move(0, Vector3.forward);
@@ -178,7 +174,7 @@ public class Player : MonoBehaviour
         //Return player to start
         animator.Rebind();
         mover = Vector3.zero;
-        transform.position = new Vector3(0, 0.92f, 4);
+        transform.position = new Vector3(0, 1.2f, 4);
         transform.rotation = Quaternion.Euler(Vector3.zero);
 
         //Clear world
@@ -210,6 +206,9 @@ public class Player : MonoBehaviour
     {
         if (obstacleMatrix[Mathf.RoundToInt(transform.position.z + 4 + direction.z), Mathf.RoundToInt(transform.position.x + 5 + direction.x)] != 1) //Check for obstacle in world
         {
+            //Starts moving
+            state = State.move;
+
             //Sets from-to transform
             startPos = transform.position;
             nextPos = startPos + direction;
@@ -232,10 +231,10 @@ public class Player : MonoBehaviour
             }
 
             //Garbage Collector
-            if(nextPosZint - 15 > 6 && world[nextPosZint - 15] != null)
+            if(nextPosZint - 12 > 6 && world[nextPosZint - 12] != null)
             {
-                Destroy(world[nextPosZint - 15]);
-                world[nextPosZint - 15] = null;
+                Destroy(world[nextPosZint - 12]);
+                world[nextPosZint - 12] = null;
             }
 
             //Stops old kill timer
@@ -269,15 +268,12 @@ public class Player : MonoBehaviour
                 default:
                     break;
             }
-
-            //Starts moving
-            state = State.move;
         }
     }
 
     void WolrdSpawner() //TODO More complex spawning system
     {
-        world[spawnPos] = Instantiate(lines[UnityEngine.Random.Range(0, 4)], new Vector3(0, 0, spawnPos), Quaternion.identity) as GameObject;
+        world[spawnPos] = Instantiate(lines[UnityEngine.Random.Range(0, 5)], new Vector3(0, 0, spawnPos), Quaternion.identity) as GameObject;
         spawnPos++;
     }
 

@@ -76,7 +76,7 @@ MonoBehaviour:
   - {fileID: 1616587624611851018, guid: 546856d9d98254d4d9f3046d2361e68b, type: 3}
   Coin: {fileID: 8837403947357196125, guid: 8c29276337821f64abd9ff85fc92dea5, type: 3}
   staticInProb: 15
-  staticOutProb: 90
+  staticOutProb: 40
   coinProb: 5
 --- !u!1001 &68641537020461938
 PrefabInstance:

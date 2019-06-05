@@ -33,12 +33,12 @@ public class Roadline : MonoBehaviour
         player.obstacleMatrix[posZ, 0] = 1;
 
         //Spawn coins
-        Vector3 position = new Vector3(4f, 0.45f, transform.position.z); //Set spawns position (x is non-static)
+        Vector3 position = new Vector3(4f, 0.3f, transform.position.z); //Set spawns position (x is non-static)
         while (position.x <= 4 && position.x >= -4)   //Spawns while in inner range
         {
             if (Random.Range(0, 100) < coinProb)
             {
-                Coins[Mathf.RoundToInt(position.x) + 5] = Instantiate(Coin, position + new Vector3(0, -0.05f, 0), Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0)) as GameObject;
+                Coins[Mathf.RoundToInt(position.x) + 5] = Instantiate(Coin, position, Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0)) as GameObject;
                 Coins[Mathf.RoundToInt(position.x) + 5].transform.SetParent(transform);
             }
             position.x -= 1; //Move position
@@ -68,7 +68,7 @@ public class Roadline : MonoBehaviour
     {
         spawnObjectIndex++;
         if (spawnObjectIndex == 10) { spawnObjectIndex = 0; }
-        spawnedObjects[spawnObjectIndex] = Instantiate(Cars[Random.Range(0, Cars.Length)], new Vector3(spawnPos, -0.35f, transform.position.z), Quaternion.Euler(new Vector3(0, spawnRot, 0))) as GameObject;
+        spawnedObjects[spawnObjectIndex] = Instantiate(Cars[Random.Range(0, Cars.Length)], new Vector3(spawnPos, -0.45f, transform.position.z), Quaternion.Euler(new Vector3(0, spawnRot, 0))) as GameObject;
         spawnedObjects[spawnObjectIndex].transform.SetParent(transform);
         spawnedObjects[spawnObjectIndex].GetComponent<Mover>().speed = speed * rotator;      //pass the speed variable into object
     }
@@ -76,7 +76,7 @@ public class Roadline : MonoBehaviour
     public void WorldChecker(float playerPos)
     {
         player.mover = Vector3.zero;
-        player.nextPos.y = 0.82f;
+        player.nextPos.y = 0.72f;
         player.nextPos.x = Mathf.RoundToInt(playerPos);
         float smallestDistance = 100;
         float objPos;
@@ -139,7 +139,7 @@ public class Roadline : MonoBehaviour
         switch (switcher)
         {
             case 0: //Bumpup
-                player.nextRot = Quaternion.Euler(player.nextRot.eulerAngles.x, player.nextRot.eulerAngles.y, Random.Range(-30, 30));
+                player.transform.rotation = Quaternion.Euler(player.nextRot.eulerAngles.x, player.nextRot.eulerAngles.y, Random.Range(-30, 30));
                 player.mover = new Vector3(speed * rotator * -1, 0, 0);
                 player.state = Player.State.dead;
                 GameObject.Find("Main Camera").GetComponent<Camera>().speed = 0;

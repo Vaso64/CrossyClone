@@ -22,7 +22,7 @@ public class Grassline : MonoBehaviour
         player.obstacleMatrix[posZ, 0] = 1;
 
         //SPAWNS
-        Vector3 position = new Vector3(12f, 0.45f, transform.position.z); //Set spawns position (x is non-static)
+        Vector3 position = new Vector3(12f, 0.15f, transform.position.z); //Set spawns position (x is non-static)
         while (position.x > -12) //Spawns while in WORLD range
         {
             while (position.x >= 5 || position.x <= -5 && position.x >= -12) //Spawns while in outer range
@@ -47,7 +47,7 @@ public class Grassline : MonoBehaviour
                 //Spawns coins with coin probability
                 else if (Random.Range(0, 100) < coinProb)
                 {
-                    Coins[Mathf.RoundToInt(position.x) + 5] = Instantiate(Coin, position + new Vector3(0, 0.05f, 0), Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0)) as GameObject;
+                    Coins[Mathf.RoundToInt(position.x) + 5] = Instantiate(Coin, position + new Vector3(0, 0.25f, 0), Quaternion.Euler(0, rotations[Random.Range(0, 4)], 0)) as GameObject;
                     Coins[Mathf.RoundToInt(position.x) + 5].transform.SetParent(transform);
                 }
                 position.x -= 1; //Move position
@@ -59,7 +59,7 @@ public class Grassline : MonoBehaviour
     {
         player.mover = Vector3.zero;
         Animator playerAnimator = player.transform.Find("Chicken").GetComponent<Animator>();
-        player.nextPos.y = 0.92f;
+        player.nextPos.y = 0.83f;
         player.nextPos.x = Mathf.RoundToInt(playerPos);
         //Pickup coin
         if (Coins[Mathf.RoundToInt(playerPos) + 5] != null)

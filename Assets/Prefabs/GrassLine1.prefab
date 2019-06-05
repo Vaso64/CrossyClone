@@ -76,7 +76,7 @@ MonoBehaviour:
   - {fileID: 1616587624611851018, guid: 546856d9d98254d4d9f3046d2361e68b, type: 3}
   Coin: {fileID: 8837403947357196125, guid: 8c29276337821f64abd9ff85fc92dea5, type: 3}
   staticInProb: 15
-  staticOutProb: 90
+  staticOutProb: 40
   coinProb: 5
 --- !u!1001 &352279025760836932
 PrefabInstance:
@@ -88,6 +88,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,6 +145,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &352279025760962502 stripped
@@ -155,6 +171,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,6 +228,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &392768967908281349 stripped
@@ -222,6 +254,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,6 +311,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &1162409766385937631 stripped
@@ -289,6 +337,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -338,6 +394,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &1260377302303244709 stripped
@@ -356,6 +420,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -405,6 +477,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &1570636959128881616 stripped
@@ -423,6 +503,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -472,6 +560,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &2140845276628944236 stripped
@@ -490,6 +586,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,6 +643,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &2568910031024207875 stripped
@@ -557,6 +669,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -606,6 +726,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &3692621917687953497 stripped
@@ -624,6 +752,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -673,6 +809,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &3749181874003894221 stripped
@@ -691,6 +835,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -740,6 +892,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &4139284215177733887 stripped
@@ -758,6 +918,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -807,6 +975,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &4818939360972351245 stripped
@@ -825,6 +1001,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -874,6 +1058,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &5127420810938089191 stripped
@@ -892,6 +1084,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -941,6 +1141,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &5164216208882033435 stripped
@@ -959,6 +1167,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1008,6 +1224,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &5421668631032581225 stripped
@@ -1026,6 +1250,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1075,6 +1307,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &5444346550345848330 stripped
@@ -1093,6 +1333,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1142,6 +1390,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
 --- !u!4 &6220781338177728424 stripped
@@ -1160,6 +1416,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1209,6 +1473,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &6390576270134253336 stripped
@@ -1227,6 +1499,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1276,6 +1556,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &6736602984278309275 stripped
@@ -1294,6 +1582,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1343,6 +1639,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &6814663066319719514 stripped
@@ -1361,6 +1665,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1410,6 +1722,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &7218733731823459350 stripped
@@ -1428,6 +1748,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1477,6 +1805,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &7301949514559089509 stripped
@@ -1495,6 +1831,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1544,6 +1888,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &7609428921680801724 stripped
@@ -1562,6 +1914,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1611,6 +1971,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &7690535781805526238 stripped
@@ -1629,6 +1997,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_Name
       value: GrassOut (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1678,6 +2054,14 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1a7d95da06c045bed9c20cfb29536, type: 3}
 --- !u!4 &8725744678952176597 stripped
@@ -1696,6 +2080,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_Name
       value: Grass1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1743,6 +2135,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
       propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 56dbc483ee1eaa147840a4ff136bdf66, type: 3}
+      propertyPath: m_ReflectionProbeUsage
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
